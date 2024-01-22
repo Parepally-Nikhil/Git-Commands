@@ -1,0 +1,91 @@
+Git:
+
+It is a software/application
+
+It is a distributed version control system
+
+There are two types of version control system:
+1)Centralized Version Control
+2)Distributed Version Control
+
+1)Centralized Version Control:
+
+*In centralized version control, there is a set of local computers and a single server. The server operates as the central location. When a developer changes the source code in his local machine, those changes get saved in the central server. The working copy is available in the local machine, but the versions are saved in the server. In other words, the central location manages the versions.
+
+*A repository is a storage area that stores source codes. We call the repository of the central server the remote repository. If there is a failure in the central location (server), the developer cannot access the versions. Furthermore, the developer will not be able to access the repository in the central location due to network connectivity issues. These are some drawbacks of a centralized version control system.
+
+2)Distributed Version Control:
+
+*Distributed version control provides solutions to the limitations of centralized version control. There is a set of computers and a server. The server has a remote repository. At the same time, each computer has its own local repository. There is no issue of the failure of the server as each machine has a local repository.  The repository is distributed among multiple machines. Therefore, we call this a distributed version control system.
+
+Furthermore, in this setup, each developer gets his own repository. He can make a change in the local repository and share it with the other developers. Moreover, there is no interference from other repositories. Each repository track history, perform pushing and pulling changes to other repositories, and supports merging. Besides, if there is no network connectivity, the developer can create versions in his own local repository. He can push the changes to the remote repository when the internet connection is available.
+
+Levels of git configuration:
+
+1)System level- system level consists of many users for all these users system level configs are applied.
+
+git config --system --list =>Command to see all system level configurations.
+
+2)User(global) level- for particular user who are logged in to system currently these user level configs are applied globally.
+
+git config --global --list =>Command to see all user global level configurations.
+
+For setting user configuration we use below commands:
+
+git config --global user.name "Parepally-Nikhil"
+
+git config --global user.email "parepallynikhil5683@gmail.com"
+
+3)Repository level- 
+
+
+
+=>git config --list =>Command to see all sytem level and user level git configurations.
+
+
+Git workflow/stages:
+--------------------
+<--------------------------------LOCAL--------------------------------------------------->
+
+			git init			git commit				git push	(Github,Gitlab,Bitbucket)
+Working directory------------------>Staging area/index------------------->Local repository--------------------->Cloud Repository
+			git add
+	^
+	|														|
+	|														|
+	|														|
+	|					git clone								|
+	-----------------------------------------------------------------------------------------------------------------
+
+
+
+Git commands:
+-------------
+
+git status
+
+git init
+
+git add	->git add file1,file2.. or git add . #Here . indicates all files that we changed.
+
+git commit -m "message"
+
+git log ->This command will give the list of all the commits that we have done.
+
+git branch ->t=This is to check under which branch our project is created or stored.
+
+git show commitId ->This is used to see what changes are done at this commit id.
+
+git push -u origin main ->This is used to send project to cloud i.e,github or gitlab or bitbucket 
+
+Each commit consits of :
+
+commit id
+Author->The name of the person who commited.
+Date->At what date commit is done.
+Commit message->This is the message which we wrote at the time of commit.
+
+How to provide access for others to work on git repository:
+
+1)Access token	->In our github account we will generate the access token and we will share to the users who want access for updating changes.
+2)Collaborators ->In our github account we will add the collaborators to get access for updating changes in our git repository.
